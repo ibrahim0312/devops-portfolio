@@ -1,33 +1,55 @@
 {
-    "experiences": [
-        {
-            "title": "Software Engineer",
-            "subtitle": "XYZ Ltd",
-            "workType": "Full-time",
-            "workDescription": [
-                "Integrated **2** new product.",
-                "Worked on adding **def** to **bcd**. Improved speed by 50%."
-            ],
-            "dateText": "06/20XX – Present"
-        },
-        {
-            "title": "Software Engineer",
-            "subtitle": "XYZ Ltd",
-            "workType": "Internship",
-            "workDescription": [
-                "Worked on abc."
-            ],
-            "dateText": "01/20XX – 05/20XX"
-        },
-        {
-            "title": "App Developer",
-            "subtitle": "ABC Pvt Ltd",
-            "workType": "Freelance",
-            "workDescription": [
-                "Developed the official apps for the startup for both Android and iOS using hybrid framework.",
-                "Done bcd work."
-            ],
-            "dateText": "09/20XX – 01/20YY"
-        }
-    ]
+  "experiences": [
+    {
+      "title": "Senior Analyst",
+      "subtitle": "HCLTech",
+      "workType": "Full-time",
+      "workDescription": [
+        "Designed and maintained scalable AWS infrastructure using **EC2, VPC, IAM, RDS, S3, ECS, EKS, and Application Load Balancers**.",
+        "Automated CI/CD pipelines using **Jenkins, GitHub Actions, AWS CodePipeline, and CodeBuild**, reducing deployment time by **60%**.",
+        "Managed production **Amazon EKS** environments and implemented autoscaling using **Karpenter and Horizontal Pod Autoscaler (HPA)**.",
+        "Implemented Infrastructure as Code using **Terraform and AWS CloudFormation** to maintain consistency across environments.",
+        "Built **CloudWatch dashboards, alarms, and centralized logging** solutions for production monitoring.",
+        "Collaborated on **DevSecOps, security, and compliance** practices across cloud environments."
+      ],
+      "dateText": "Apr 2025 – Present"
+    },
+    {
+      "title": "Service Desk Consultant",
+      "subtitle": "Scorg International Private Ltd.",
+      "workType": "Full-time",
+      "workDescription": [
+        "Supported AWS environments using **EC2, IAM, RDS, and S3**.",
+        "Implemented monitoring and log analysis using the **ELK Stack**, helping reduce mean time to resolution by **40%**.",
+        "Worked on **IAM optimization, AWS CloudTrail, and AWS Config** for security and governance.",
+        "Automated operational tasks using **Shell and Python scripting**.",
+        "Provided **L2/L3 production support**, troubleshooting incidents and performing root cause analysis."
+      ],
+      "dateText": "Sep 2024 – Apr 2025"
+    },
+    {
+      "title": "Associate-CS",
+      "subtitle": "Sutherland Global Services",
+      "workType": "Full-time",
+      "workDescription": [
+        "Implemented AWS infrastructure using **AWS CloudFormation** and Infrastructure as Code practices.",
+        "Worked with **Prometheus, Grafana, and CloudWatch** for infrastructure monitoring and observability, reducing troubleshooting time by **30%**.",
+        "Managed **IAM roles, policies, and AWS Organizations Service Control Policies (SCPs)** across multi-account environments.",
+        "Supported deployment automation and cloud migration activities.",
+        "Applied cloud security and operational best practices across AWS environments."
+      ],
+      "dateText": "May 2023 – Sep 2024"
+    },
+    {
+      "title": "Associate Customer Support",
+      "subtitle": "Tech Mahindra",
+      "workType": "Full-time",
+      "workDescription": [
+        "Provided technical support for **broadband and network-related issues**.",
+        "Managed incidents and service requests using **ServiceNow**.",
+        "Troubleshot connectivity and infrastructure-related end-user issues while working within defined **SLA requirements**."
+      ],
+      "dateText": "Mar 2022 – May 2023"
+    }
+  ]
 }

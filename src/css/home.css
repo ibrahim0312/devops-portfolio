@@ -1,124 +1,199 @@
-/* Bento hero: an asymmetric grid of tiles centred in the first viewport. */
-
-.hero {
+.home-fade-container {
   width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: var(--space-6) var(--space-5);
+}
+
+.devops-hero {
+  min-height: calc(100vh - 100px);
+  padding: 35px 24px 45px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: calc(100vh - 9vh);
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero .bento {
-  align-items: stretch;
-}
-
-/* Intro tile -------------------------------------------------------------- */
-.hero-intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  gap: var(--space-4);
-  min-height: 320px;
-}
-
-.hero-intro::after {
+.devops-hero::before {
   content: "";
   position: absolute;
-  width: 22rem;
-  height: 22rem;
-  right: -8rem;
-  top: -8rem;
-  background: radial-gradient(closest-side, var(--accent-soft), transparent);
+  width: 700px;
+  height: 500px;
+  top: -220px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(34, 197, 94, 0.10),
+    transparent 65%
+  );
   pointer-events: none;
 }
 
-.hero-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
+.availability-badge {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 10px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  background: rgba(34, 197, 94, 0.07);
+  font-size: 14px;
+  color: #b7c1ba;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
 }
 
-.hero-eyebrow::before {
-  content: "";
-  width: 8px;
-  height: 8px;
+.status-dot {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-soft);
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
 }
 
-.hero-name {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(2.6rem, 7vw, 5rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+.profile-frame {
+  width: 145px;
+  height: 175px;
+  padding: 7px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow:
+    0 0 35px rgba(34, 197, 94, 0.08),
+    inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.tech-line {
+  margin-top: 2px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #929a94;
+}
+
+.tech-line span {
+  color: #22c55e;
+}
+
+.devops-headline {
+  max-width: 1050px;
   margin: 0;
+  font-size: clamp(32px, 3.2vw, 50px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -1.4px;
+  color: #f5f7f5;
 }
 
-.hero-roles {
+.devops-headline span {
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.devops-role {
+  min-height: 27px;
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #22c55e;
+}
+
+.devops-description {
+  max-width: 760px;
+  margin: 12px auto 0;
+  color: #949b96;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.devops-actions {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: clamp(1rem, 3vw, 1.45rem);
+  gap: 14px;
+  margin-top: 28px;
 }
 
-.hero-tagline {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  max-width: 48ch;
-  margin: 0;
-}
-
-.hero-cta {
-  display: flex;
-  gap: var(--space-3);
-  flex-wrap: wrap;
-  margin-top: var(--space-2);
-}
-
-/* Monogram tile ----------------------------------------------------------- */
-.monogram {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  min-height: 150px;
-}
-
-.monogram-mark {
-  font-family: var(--font-display);
+.devops-btn {
+  min-width: 170px;
+  padding: 13px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
   font-weight: 600;
-  font-size: clamp(2.6rem, 6vw, 3.6rem);
-  line-height: 1;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
-.monogram-label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  opacity: 0.9;
+.devops-btn:hover {
+  transform: translateY(-2px);
 }
 
-/* Social tile ------------------------------------------------------------- */
-.hero-social {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  align-items: flex-start;
-  justify-content: center;
+.primary-btn {
+  color: #ffffff;
+  background: linear-gradient(90deg, #15803d, #22c55e);
+  box-shadow: 0 8px 30px rgba(34, 197, 94, 0.18);
+}
+
+.secondary-btn {
+  color: #e8ece9;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(34, 197, 94, 0.38);
+}
+
+.secondary-btn:hover {
+  background: rgba(34, 197, 94, 0.08);
+}
+
+@media (max-width: 768px) {
+  .devops-hero {
+    padding: 35px 18px 55px;
+  }
+
+  .profile-frame {
+    width: 140px;
+    height: 165px;
+  }
+
+  .devops-headline {
+    font-size: 36px;
+  }
+
+  .devops-headline br {
+    display: none;
+  }
+
+  .tech-line {
+    line-height: 1.8;
+  }
+
+  .devops-description {
+    font-size: 15px;
+  }
+
+  .devops-actions {
+    width: 100%;
+  }
+
+  .devops-btn {
+    width: 100%;
+    max-width: 320px;
+  }
 }

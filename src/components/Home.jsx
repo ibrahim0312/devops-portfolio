@@ -3,20 +3,8 @@ import Typewriter from 'typewriter-effect';
 import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 import endpoints from '../constants/endpoints';
-import Social from './Social';
 import FallbackSpinner from './FallbackSpinner';
 import '../css/home.css';
-
-function initialsOf(name) {
-  if (!name) return '';
-  return name
-    .split(' ')
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join('')
-    .toUpperCase();
-}
 
 function Home() {
   const [data, setData] = useState(null);
@@ -27,52 +15,84 @@ function Home() {
     })
       .then((res) => res.json())
       .then((res) => setData(res))
-      .catch((err) => err);
+      .catch((err) => console.error(err));
   }, []);
 
   return data ? (
     <Fade triggerOnce className="home-fade-container">
-      <section className="hero">
-        <div className="bento">
-          <div className="tile hero-intro span-4 rspan-2">
-            {data?.status && (
-              <span className="hero-eyebrow">{data.status}</span>
-            )}
-            <h1 className="hero-name">{data?.name}</h1>
-            <div className="hero-roles">
-              <span>I&apos;m&nbsp;</span>
-              <Typewriter
-                options={{
-                  loop: true,
-                  autoStart: true,
-                  strings: data?.roles,
-                }}
-              />
-            </div>
-            {data?.tagline && <p className="hero-tagline">{data.tagline}</p>}
-            <div className="hero-cta">
-              <Link className="btn-pill btn-accent" to="/projects">
-                View my work
-              </Link>
-              <Link className="btn-pill btn-ghost" to="/about">
-                About me
-              </Link>
-            </div>
-          </div>
+      <section className="devops-hero">
 
-          <div className="tile tile--accent monogram span-2">
-            <span className="monogram-mark">{initialsOf(data?.name)}</span>
-            <span className="monogram-label">{data?.name}</span>
-          </div>
-
-          <div className="tile hero-social span-2">
-            <span className="tile-label">Find me</span>
-            <Social />
-          </div>
+        <div className="availability-badge">
+          <span className="status-dot" />
+          {data?.status}
         </div>
+
+        <div className="profile-frame">
+          <img
+            src="/images/profile.jpg"
+            alt={data?.name}
+            className="profile-image"
+          />
+        </div>
+
+        <div className="tech-line">
+          AWS <span>•</span> TERRAFORM <span>•</span> KUBERNETES
+          <span> • </span> OBSERVABILITY
+        </div>
+
+        <h1 className="devops-headline">
+          I Build Reliable Cloud Infrastructure and
+          <br />
+          <span>Production-Ready DevOps Systems</span>
+        </h1>
+
+        <div className="devops-role">
+          <Typewriter
+            options={{
+              loop: true,
+              autoStart: true,
+              strings: data?.roles,
+              delay: 55,
+              deleteSpeed: 30,
+            }}
+          />
+        </div>
+
+        <p className="devops-description">
+          DevOps and Cloud Engineer focused on building scalable cloud
+          infrastructure, automated CI/CD pipelines, containerized workloads,
+          and reliable production systems.
+        </p>
+
+        <div className="devops-actions">
+          <Link className="devops-btn primary-btn" to="/projects">
+            Explore Featured Projects
+          </Link>
+
+          <a
+            className="devops-btn secondary-btn"
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub Projects
+          </a>
+
+          <a
+            className="devops-btn secondary-btn"
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+
       </section>
     </Fade>
-  ) : <FallbackSpinner />;
+  ) : (
+    <FallbackSpinner />
+  );
 }
 
 export default Home;
