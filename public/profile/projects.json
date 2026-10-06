@@ -1,3 +1,24 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "image": "images/projects/aws-vpc-alb-architecture.png",
+      "title": "Highly Available AWS VPC & ALB Architecture",
+      "bodyText": "- Designed a highly available AWS web architecture across multiple Availability Zones.\n- Configured a custom **VPC**, public subnets, route tables, Internet Gateway, and security groups.\n- Deployed **Amazon EC2** web servers behind an **Application Load Balancer (ALB)** for traffic distribution and high availability.\n- Integrated **Amazon S3** for web assets, backups, and ALB access logs.\n- Implemented **IAM roles** and least-privilege access for secure AWS resource communication.",
+      "links": [
+        {
+          "text": "GitHub",
+          "href": "https://github.com/ibrahim0312/aws-vpc-alb-project"
+        }
+      ],
+      "tags": [
+        "AWS",
+        "VPC",
+        "EC2",
+        "ALB",
+        "S3",
+        "IAM",
+        "Multi-AZ"
+      ]
+    }
+  ]
 }
