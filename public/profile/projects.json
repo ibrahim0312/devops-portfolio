@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "image": "image/projects/devops-launchpad.png",
+      "image": "images/projects/aws-vpc-alb-architecture.png",
       "title": "DevOps Launchpad — Docker & CI/CD",
       "bodyText": "- Built a **Node.js dashboard** displaying live application health, uptime, and release information.\n- Containerized the app with **Docker**, a non-root user, and automated health checks.\n- Automated **six integration tests**, Docker image builds, and container verification using **GitHub Actions**.\n- Deployed on **Render** with automatic deployment after CI checks pass.\n- Verified the delivery flow by pushing a code change and confirming it appeared on the live site.",
       "links": [
