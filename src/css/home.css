@@ -4,82 +4,176 @@
 
 .devops-hero {
   min-height: calc(100vh - 100px);
-  padding: 35px 24px 45px;
+  padding: 35px 24px 55px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
   text-align: center;
+
   position: relative;
   overflow: hidden;
 }
 
+/* Background glow */
+
 .devops-hero::before {
   content: "";
+
   position: absolute;
-  width: 700px;
-  height: 500px;
-  top: -220px;
+
+  width: 850px;
+  height: 600px;
+
+  top: -260px;
   left: 50%;
+
   transform: translateX(-50%);
+
   background: radial-gradient(
     circle,
-    rgba(34, 197, 94, 0.10),
+    rgba(34, 197, 94, 0.11),
     transparent 65%
   );
+
   pointer-events: none;
 }
+
+/* =========================
+   AVAILABILITY
+========================= */
 
 .availability-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+
   padding: 11px 22px;
+
   border-radius: 999px;
   border: 1px solid rgba(34, 197, 94, 0.45);
+
   background: rgba(34, 197, 94, 0.07);
+
   font-size: 14px;
   color: #b7c1ba;
-  margin-bottom: 18px;
+
+  margin-bottom: 24px;
+
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .status-dot {
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
+
   background: #22c55e;
-  box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
-}
 
-.profile-frame {
-  width: 145px;
-  height: 175px;
-  padding: 7px;
-  margin-bottom: 15px;
-  border-radius: 25px;
-  border: 1px solid rgba(34, 197, 94, 0.45);
-  background: rgba(255, 255, 255, 0.03);
   box-shadow:
-    0 0 35px rgba(34, 197, 94, 0.08),
-    inset 0 0 20px rgba(255, 255, 255, 0.02);
+    0 0 12px rgba(34, 197, 94, 0.9);
+
+  animation: statusPulse 2s ease-in-out infinite;
 }
 
-.profile-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  display: block;
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
 }
+
+/* =========================
+   DEVOPS IMAGE
+========================= */
+
+.devops-image-frame {
+  width: min(900px, 92vw);
+
+  margin-bottom: 28px;
+
+  position: relative;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(56, 189, 248, 0.2);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.32),
+    0 0 45px rgba(34, 197, 94, 0.06);
+
+  animation:
+    imageEntrance 0.8s ease-out both,
+    imageFloat 6s ease-in-out 0.8s infinite;
+}
+
+.devops-main-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  border-radius: 22px;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.devops-image-frame:hover .devops-main-image {
+  transform: scale(1.015);
+}
+
+/* Initial image entrance */
+
+@keyframes imageEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Very subtle movement */
+
+@keyframes imageFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* =========================
+   TECHNOLOGIES
+========================= */
 
 .tech-line {
   margin-top: 2px;
   margin-bottom: 8px;
+
   font-size: 12px;
   font-weight: 700;
+
   letter-spacing: 2px;
+
   color: #929a94;
 }
 
@@ -87,55 +181,99 @@
   color: #22c55e;
 }
 
+/* =========================
+   HEADLINE
+========================= */
+
 .devops-headline {
   max-width: 1050px;
+
   margin: 0;
+
   font-size: clamp(32px, 3.2vw, 50px);
+
   line-height: 1.08;
+
   font-weight: 800;
+
   letter-spacing: -1.4px;
+
   color: #f5f7f5;
 }
 
 .devops-headline span {
-  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  background: linear-gradient(
+    90deg,
+    #38bdf8,
+    #22c55e
+  );
+
   -webkit-background-clip: text;
   background-clip: text;
+
   color: transparent;
 }
 
+/* =========================
+   ROLE
+========================= */
+
 .devops-role {
   min-height: 27px;
+
   margin-top: 14px;
+
   font-size: 16px;
   font-weight: 600;
+
   color: #22c55e;
 }
 
+/* =========================
+   DESCRIPTION
+========================= */
+
 .devops-description {
   max-width: 760px;
+
   margin: 12px auto 0;
+
   color: #949b96;
+
   font-size: 16px;
+
   line-height: 1.7;
 }
 
+/* =========================
+   BUTTONS
+========================= */
+
 .devops-actions {
   display: flex;
+
   justify-content: center;
   align-items: center;
+
   flex-wrap: wrap;
+
   gap: 14px;
+
   margin-top: 28px;
 }
 
 .devops-btn {
   min-width: 170px;
+
   padding: 13px 22px;
+
   border-radius: 8px;
+
   text-decoration: none;
+
   font-size: 14px;
   font-weight: 600;
+
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -148,32 +286,58 @@
 
 .primary-btn {
   color: #ffffff;
-  background: linear-gradient(90deg, #15803d, #22c55e);
-  box-shadow: 0 8px 30px rgba(34, 197, 94, 0.18);
+
+  background: linear-gradient(
+    90deg,
+    #15803d,
+    #22c55e
+  );
+
+  box-shadow:
+    0 8px 30px rgba(34, 197, 94, 0.18);
 }
 
 .secondary-btn {
   color: #e8ece9;
+
   background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(34, 197, 94, 0.38);
+
+  border:
+    1px solid rgba(34, 197, 94, 0.38);
 }
 
 .secondary-btn:hover {
-  background: rgba(34, 197, 94, 0.08);
+  background:
+    rgba(34, 197, 94, 0.08);
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
   .devops-hero {
-    padding: 35px 18px 55px;
+    padding: 30px 16px 55px;
   }
 
-  .profile-frame {
-    width: 140px;
-    height: 165px;
+  .availability-badge {
+    margin-bottom: 20px;
+  }
+
+  .devops-image-frame {
+    width: 100%;
+
+    margin-bottom: 24px;
+
+    border-radius: 16px;
+  }
+
+  .devops-main-image {
+    border-radius: 16px;
   }
 
   .devops-headline {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .devops-headline br {
@@ -182,6 +346,8 @@
 
   .tech-line {
     line-height: 1.8;
+
+    font-size: 11px;
   }
 
   .devops-description {
@@ -194,6 +360,35 @@
 
   .devops-btn {
     width: 100%;
+
     max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .devops-hero {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .availability-badge {
+    padding: 9px 15px;
+
+    font-size: 12px;
+  }
+
+  .devops-headline {
+    font-size: 29px;
+
+    letter-spacing: -0.8px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .devops-image-frame,
+  .status-dot {
+    animation: none;
   }
 }
