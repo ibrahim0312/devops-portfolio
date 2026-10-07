@@ -1,6 +1,27 @@
 {
   "projects": [
     {
+      "title": "DevOps Launchpad — Docker & CI/CD",
+      "bodyText": "- Built a **Node.js dashboard** displaying live application health, uptime, and release information.\n- Containerized the app with **Docker**, a non-root user, and automated health checks.\n- Automated **six integration tests**, Docker image builds, and container verification using **GitHub Actions**.\n- Deployed on **Render** with automatic deployment after CI checks pass.\n- Verified the delivery flow by pushing a code change and confirming it appeared on the live site.",
+      "links": [
+        {
+          "text": "Live Demo",
+          "href": "https://devops-launchpad.onrender.com/"
+        },
+        {
+          "text": "GitHub",
+          "href": "https://github.com/ibrahim0312/devops-launchpad"
+        }
+      ],
+      "tags": [
+        "Node.js",
+        "Docker",
+        "GitHub Actions",
+        "CI/CD",
+        "Render"
+      ]
+    },
+    {
       "image": "images/projects/aws-vpc-alb-architecture.png",
       "title": "Highly Available AWS VPC & ALB Architecture",
       "bodyText": "- Designed a highly available AWS web architecture across multiple Availability Zones.\n- Configured a custom **VPC**, public subnets, route tables, Internet Gateway, and security groups.\n- Deployed **Amazon EC2** web servers behind an **Application Load Balancer (ALB)** for traffic distribution and high availability.\n- Integrated **Amazon S3** for web assets, backups, and ALB access logs.\n- Implemented **IAM roles** and least-privilege access for secure AWS resource communication.",
